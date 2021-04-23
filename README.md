@@ -20,8 +20,6 @@ Green-Towers is a platform for people who would like to start with hydroponic gr
     signup form.
 * **profile**
     As user we want to see our towers, edit and add new towers.
-* **Tower**   
-    input form to create our tower.
 * **Plants** 
     Here we can see all the available plants and choose the ones we want for our tower.
 
