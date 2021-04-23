@@ -37,10 +37,8 @@ Green-Towers is a platform for people who would like to start with hydroponic gr
 
 ### Protected Routes ###
 * GET/ 
-    * profile empty tower
-    * profile full tower
+    * profile input form / empty tower / full tower  
     * plants
-    * input form
     * edit
     * delete plant
 
@@ -54,13 +52,27 @@ Green-Towers is a platform for people who would like to start with hydroponic gr
 ## Models ##
 
 **Users** 
-    User Schema.
+    User Schema
+
+    username: String
+    password: String
 
 **Plants** 
-    Plant Schema.
+    Plant Schema
+
+    Name: String
+    Description: String
+    Time to harvest: Number
+    Placement: Bottom, Middle, Top
+    type: Veggie/Fruit
 
 **Towers** 
-    Tower Schema.
+    Tower Schema
+
+    Name: String
+    maxPlants: Number
+     ref: plants 
+     ref: user
 
 ## Backlog ##
 
