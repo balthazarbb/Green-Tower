@@ -55,7 +55,15 @@ let UsersSchema = new Schema({
         type: String,
         unique: true
     },
-    password: String
+    password: String,
+    plantId: {
+        type: Schema.Types.ObjectId,
+        ref: PlantsModel
+    },
+    towerId: {
+        type: Schema.Types.ObjectId,
+        ref: TowersModel
+    }
 });
 
 **Plants** 
