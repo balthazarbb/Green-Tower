@@ -50,27 +50,30 @@ Green-Towers is a platform for people who would like to start with hydroponic gr
 ## Models ##
 
 **Users** 
-    User Schema
-
-    username: String
+let UsersSchema = new Schema({
+    username: {
+        type: String,
+        unique: true
+    },
     password: String
+});
 
 **Plants** 
-    Plant Schema
 
-    Name: String
-    Description: String
-    Time to harvest: Number
-    Placement: Bottom, Middle, Top
-    type: Veggie/Fruit
+let PlantsSchema = new Schema({
+    plantname: String,
+    description: String,
+    timeToHarvest: Number,
+    placement: String,
+    plantType: String
+}); type: Veggie/Fruit
 
 **Towers** 
-    Tower Schema
 
-    Name: String
+let TowerSchema = new Schema({
+    towername: String,
     maxPlants: Number
-     ref: plants 
-     ref: user
+});
 
 ## Backlog ##
 

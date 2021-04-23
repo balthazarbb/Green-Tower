@@ -9,7 +9,6 @@ let PlantsSchema = new Schema({
     timeToHarvest: Number,
     placement: String,
     plantType: String
-
 });
 
 const PlantsModel = model('Plants', PlantsSchema);
