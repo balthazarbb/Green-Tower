@@ -1,6 +1,7 @@
 //importing the Schema
 const { Schema, model } = require("mongoose");
-const { schema } = require("./Plants.model");
+const PlantsModel = require("./Plants.model");
+const TowersModel = require("./Towers.model")
 
 //setting the user schema
 let UsersSchema = new Schema({
