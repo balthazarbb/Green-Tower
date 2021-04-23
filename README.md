@@ -25,6 +25,31 @@ Green-Towers is a platform for people who would like to start with hydroponic gr
 * **Plants** 
     Here we can see all the available plants and choose the ones we want for our tower.
 
+## Routes ##
+
+* GET/
+    * sign up
+    * login
+
+* POST/
+    * sign up
+    * login
+
+### Protected Routes ###
+* GET/ 
+    * profile empty tower
+    * profile full tower
+    * plants
+    * input form
+    * edit
+    * delete plant
+
+* POST/
+    * input form
+    * confirm edit
+    * plants
+    
+
 
 ## Models ##
 
@@ -59,4 +84,4 @@ Green-Towers is a platform for people who would like to start with hydroponic gr
 
 
 
-### AnnBar 2021 ###
+#### AnnBar 2021 ####
