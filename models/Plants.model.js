@@ -5,8 +5,10 @@ const { Schema, model } = require("mongoose");
 //setting the plant Schema
 let PlantsSchema = new Schema({
     plantname: String,
+    img: String,
     description: String,
-    timeToHarvest: Number,
+    timeToHarvest: String,
+    phValue: Number,
     placement: String,
     plantType: String
 });
