@@ -7,7 +7,7 @@ let PlantsSchema = new Schema({
     plantname: String,
     img: String,
     description: String,
-    timeToHarvest: String,
+    timeToHarvest: Number,
     phValue: Number,
     placement: String,
     plantType: String
