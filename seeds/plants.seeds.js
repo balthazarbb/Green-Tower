@@ -10,7 +10,7 @@ const myPlants =[
     {plantname:'Kale', img:'', description:'Very nutritious and healthy, easy to grow', timeToHarvest: 30, phValue: 5.5-6.5, plantType:'leaf'},
     {plantname:'Cucumber', img:'', description:'Choose between a huge variety. Likes it sunny and warm', timeToHarvest: 50, phValue: 5.5-6.5, plantType:'bloom'},
     {plantname:'Spinach', img:'', description:'Not only Popeyes favorite! Likes it cool and don´t need much sun', timeToHarvest: 37, phValue: 6-7, plantType:'leaf'},
-    {plantname:'Beans', img:'', description:'Large variety to choose of. Very Productive', timeToHarvest: 90, phValue: 6.0 , plantType:'bloom'},
+    {plantname:'Bok Choy', img:'', description:'The crunchy chinese cabbage. likes it cool.', timeToHarvest: 50, phValue: 6.0-7.0 , plantType:'leaf'},
     {plantname:'Chives', img:'', description:'Beautiful and healthy. Can be harvested regularly, needs lots of light', timeToHarvest: 25, phValue: 6.0, plantType:'herb'},
     {plantname:'Basil', img:'', description:'Choose between a huge variety. Needs a lot of light and continues growing when harvested ', timeToHarvest: 30, phValue:5.5-6.5 , plantType:'herb'},
     {plantname:'Mint', img:'', description:'Choose between a huge variety. Easy to grow.', timeToHarvest: 25, phValue: 5.5-6.5, plantType:'herb'},

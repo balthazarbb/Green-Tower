@@ -1,12 +1,17 @@
-<form method="POST" action="/login">
-  <label>Username</label>
-  <input type="username" name="username" placeholder="enter your username"  >
+<h1>Green-Tower</h1>
 
-  <label>Password</label>
-  <input type="password" name="password" placeholder="enter your password"  >
-  <button>Log In</button>
+<form>
+  <div class="mb-3">
+
+    <input type="username" class="form-control" placeholder="Username" id="username">
+  </div>
+  <div class="mb-3">
+    <input type="password" class="form-control" placeholder="Password" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+  </div>
+  <button style="background-color: green;", type="login" class="btn btn-primary">Login</button>
 </form>
-
 
 {{#if msg}}
   <div class="error">{{msg}}</div>

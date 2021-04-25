@@ -1,12 +1,16 @@
-<form method="POST" action="/signup">
-  <label>Username</label>
-  <input type="username" name="username" placeholder="choose a username"  >
+<h1>Green-Tower</h1>
 
-  <label>Password</label>
-  <input type="password" name="password" placeholder="choose a password"  >
-  <button>Sign Up</button>
+<form>
+  <div class="mb-3">
+    <input type="username" class="form-control" placeholder="Username" id="username">
+  </div>
+  <div class="mb-3">
+    <input type="password" class="form-control" placeholder="Password" id="exampleInputPassword1">
+        <div id="passwordHelp" class="form-text">Your Password must cointain 8 characters, one uppercase letter and a special character.</div>
+
+  </div>
+  <button style="background-color: green;", type="submit" class="btn btn-primary">Submit</button>
 </form>
-
 
 {{#if msg}}
   <div class="error">{{msg}}</div>
