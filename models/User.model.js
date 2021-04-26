@@ -9,10 +9,12 @@ let UsersSchema = new Schema({
     unique: true,
   },
   password: String,
-  towerId: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Tower',
-  }],
+  towerId: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Tower",
+    },
+  ],
 });
 
 const User = model("Users", UsersSchema);
