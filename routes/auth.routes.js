@@ -129,7 +129,9 @@ router.post("/create-tower", authorize, (req, res, next) => {
 });
 
 router.get("/plants", authorize, (req, res, next) => {
-  res.render("plants.hbs");
+  //  Plants.findById()
+
+  res.render("plants.hbs"); // {{plants.name}}
 });
 
 //router.post("/plants")
