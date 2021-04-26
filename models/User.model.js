@@ -1,7 +1,6 @@
 //importing the Schema
 const { Schema, model } = require("mongoose");
-const PlantsModel = require("./Plants.model");
-const TowersModel = require("./Towers.model")
+require("./Towers.model");
 
 //setting the user schema
 let UsersSchema = new Schema({
@@ -10,16 +9,12 @@ let UsersSchema = new Schema({
     unique: true,
   },
   password: String,
-  plantId: {
+  towerId: [{
     type: Schema.Types.ObjectId,
-    ref: PlantsModel,
-  },
-  towerId: {
-    type: Schema.Types.ObjectId,
-    ref: TowersModel,
-  },
+    ref: 'Tower',
+  }],
 });
 
-const UsersModel = model("Users", UsersSchema);
+const User = model("Users", UsersSchema);
 
-module.exports = UsersModel;
+module.exports = User;

@@ -1,15 +1,15 @@
 <h1 style="color: #3CB371">Green-Tower</h1>
 
-<form>
+<form method="POST" action="/signup">
   <div class="mb-3">
-    <input type="username" class="col-form-label" placeholder="Username" id="username">
+    <input type="username" class="col-form-label" placeholder="Username" name="username">
   </div>
   <div class="mb-3">
-    <input type="password" class="col-form-label" placeholder="Password" id="exampleInputPassword1">
-        <div id="passwordHelp" class="form-text">Your Password must cointain 8 characters, one uppercase letter and a special character.</div>
+    <input type="password" class="col-form-label" name="password" placeholder="Password" id="exampleInputPassword1">
+        <div id="passwordHelp" class="form-text">Your Password must contain 8 characters, one number, and an uppercase letter.</div>
 
   </div>
-  <button align="right", href="./login.hbs", style="background-color:#4169E1;", type="submit" class="btn btn-primary">Submit</button>
+  <button style="background-color:#4169E1;" type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 {{#if msg}}

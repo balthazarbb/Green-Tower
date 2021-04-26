@@ -3,6 +3,7 @@ const User = require("../models/User.model");
 const bcrypt = require("bcryptjs");
 const TowerModel = require("../models/Towers.model");
 
+
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup.hbs");
 });
@@ -10,6 +11,7 @@ router.get("/signup", (req, res, next) => {
 router.post("/signup", (req, res, next) => {
   const { username, password } = req.body;
   // check if input of password and username exists
+  console.log(`TESTEETSETEESTSS, ${username}`)
   if (!username || !password) {
     res.render("auth/signup.hbs", { msg: "PLease enter all fields" });
     return;
@@ -32,7 +34,7 @@ router.post("/signup", (req, res, next) => {
       res.redirect("/login");
     })
     .catch((err) => {
-      next("ERROOOOOR", err);
+      next(err);
     });
 });
 
@@ -95,7 +97,7 @@ router.post("/profile", authorize, (req, res, next) => {
   const towername = req.body;
   TowerModel.create({ towername })
     .then(() => {
-      res.redirect("/profile.hbs"); //does it go through the router.get route line 87 then?
+      res.redirect("/profile"); //does it go through the router.get route line 87 then?
     })
     .catch((err) => {
       console.log("ERROR: ", err);
