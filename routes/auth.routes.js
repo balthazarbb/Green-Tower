@@ -8,6 +8,7 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res, next) => {
+  console.log("testtesttest");
   const { username, password } = req.body;
   // check if input of password and username exists
   if (!username || !password) {
