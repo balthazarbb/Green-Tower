@@ -14,7 +14,7 @@ const myPlants =[
     {plantname:'Cilantro', img:'images/cilantro.png', description:'Our favourite herb. Can be harvested regularly, needs lots of light', timeToHarvest: 25, phValue: 6.0, plantType:'herb'},
     {plantname:'Basil', img:'images/basil.png', description:'Choose between a huge variety. Needs a lot of light and continues growing when harvested ', timeToHarvest: 30, phValue:5.5-6.5 , plantType:'herb'},
     {plantname:'Mint', img:'images/mint.png', description:'Choose between a huge variety. Easy to grow.', timeToHarvest: 25, phValue: 5.5-6.5, plantType:'herb'},
-    {plantname:'Strawberries', img:'images/strawberry.ng.png', description:'Make this awesome fruit avalable the whole year. Needs a lot of light', timeToHarvest: 30, phValue: 6.0 , plantType:'bloom'},
+    {plantname:'Strawberries', img:'images/strawberry.png', description:'Make this awesome fruit avalable the whole year. Needs a lot of light', timeToHarvest: 30, phValue: 6.0 , plantType:'bloom'},
     //{plantname:'Blueberries', img:'', description:'Blueberries are true vitamin bombs. Need a lot of light and likes it warm.', timeToHarvest: 30, phValue: 4.5-5.8, plantType:'bloom'},
     {plantname:'Pepper', img:'images/pepper.png', description:'Hot or sweet, your choice! They like it warm and very sunny.', timeToHarvest: 80, phValue: 5.5-6.0, plantType:'veggie'},
     //{plantname:'Raspberry', img:'', description:'Enjoy fresh an yummy raspberries the whole year. Likes it very warm and sunny.', timeToHarvest: 30, phValue: 5.8-6.5 , plantType:'bloom'},

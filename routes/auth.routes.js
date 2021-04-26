@@ -46,7 +46,7 @@ router.post("/login", (req, res, next) => {
   const { username, password } = req.body;
   // validate input of PW and Username
   console.log(username);
-  User.findOne({ username })
+  User.findById({ username })
     .then((response) => {
       // when email does not exists, response will be an null
       if (!response) {
