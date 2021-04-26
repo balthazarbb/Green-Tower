@@ -131,18 +131,30 @@ router.post("/create-tower", authorize, (req, res, next) => {
 
 //Plants Routes
 
-router.get("/plants", authorize, (req, res, next) => {
+router.get("/plants/:id", authorize, (req, res, next) => {
   //  Plants.findById()
+  const towerId = req.params.id;
   Plants.find()
     .then((plants) => {
       console.log(plants);
-      res.render("plants.hbs", { plants }); // {{plants.name}}
+      res.render("plants.hbs", { plants, towerId }); // {{plants.name}}
     })
     .catch((err) => {
       console.log(err);
     });
 });
 
-//router.post("/plants")
+router.post("/plants/:towerId/:plantId", authorize, (req, res, next) => {
+  const plantId = req.params.plantId; // how do we send the id over with the button?
+  const towerId = req.params.towerId;
+  TowerModel.findByIdAndUpdate(
+    towerId,
+    { $push: { plantId } },
+    { new: true }
+  ).then((updatedTower) => {
+    // req.session.userInfo = updatedUser; //update the session
+    res.redirect("/profile"); //does it go through the router.get route line 87 if res.redirect?
+  });
+});
 
 module.exports = router;
