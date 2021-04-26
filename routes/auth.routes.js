@@ -91,17 +91,37 @@ const authorize = (req, res, next) => {
 
 router.get("/profile", authorize, (req, res, next) => {
   const naming = !req.session?.userInfo?.towerId?.length; //use optional chaining with ? //using !! to convert num to booleans
+  const userId = req.session.userInfo._id;
   console.log(naming);
-  res.render("profile.hbs", { naming });
+  //if tower exi
+  User.findById(userId).then((user) => {
+    TowerModel.find({ _id: { $in: [...user.towerId] } }).then((towers) => {
+      res.render("profile.hbs", { naming, towers });
+    });
+  });
+
   //else show card with towername
   //  res.render("/profile.hbs", {towername});   can we use towername here already? because input is in line 95
 });
 
-router.post("/profile", authorize, (req, res, next) => {
-  const towername = req.body;
+router.post("/create-tower", authorize, (req, res, next) => {
+  const { towername } = req.body;
+  const userId = req.session.userInfo._id;
+  console.log(req.body);
+  console.log(towername);
   TowerModel.create({ towername })
-    .then(() => {
-      res.redirect("/profile"); //does it go through the router.get route line 87 then?
+    .then((tower) => {
+      User.findByIdAndUpdate(
+        userId,
+        { $push: { towerId: tower._id } },
+        { new: true }
+      ) //$push =pushing into array //new: true for the updatedUser=updated
+        .then((updatedUser) => {
+          //push towername to user in db
+          //
+          req.session.userInfo = updatedUser; //update the session
+          res.redirect("/profile"); //does it go through the router.get route line 87 if res.redirect?
+        });
     })
     .catch((err) => {
       console.log("ERROR: ", err);

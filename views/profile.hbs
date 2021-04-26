@@ -17,8 +17,12 @@
 </nav>
 
 {{#if naming}}
-<form method="POST" action="/profile">
+<form method="POST" action="/create-tower">
   <label>Towername</label>
   <input type="towername" name="towername" placeholder="name your tower"  >
+  <button type="submit">create</button>
   </form>
  {{/if}} 
+ {{#each towers}}
+ <h2>{{this.towername}}</h2>
+ {{/each}}
