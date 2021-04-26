@@ -2,6 +2,7 @@ const router = require("express").Router();
 const User = require("../models/User.model");
 const bcrypt = require("bcryptjs");
 const TowerModel = require("../models/Towers.model");
+const Plants = require("../models/Plants.model");
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup.hbs");
@@ -124,14 +125,22 @@ router.post("/create-tower", authorize, (req, res, next) => {
         });
     })
     .catch((err) => {
-      console.log("ERROR: ", err);
+      console.log(err);
     });
 });
 
+//Plants Routes
+
 router.get("/plants", authorize, (req, res, next) => {
   //  Plants.findById()
-
-  res.render("plants.hbs"); // {{plants.name}}
+  Plants.find()
+    .then((plants) => {
+      console.log(plants);
+      res.render("plants.hbs", { plants }); // {{plants.name}}
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 //router.post("/plants")
