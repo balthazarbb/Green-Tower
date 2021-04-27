@@ -57,9 +57,15 @@ router.get("/create-new-tower", authorize, (req, res, next) => {
 
   //if tower exists
   User.findById(userId).then((user) => {
-    TowerModel.find({ _id: { $in: [...user.towerId] } }).then((towers) => {
-      res.render("profile.hbs", { naming: true, towers });
-    });
+    TowerModel.find({ _id: { $in: [...user.towerId] } })
+      .populate("plantId")
+      .then((towers) => {
+        console.log(towers);
+        res.render("profile.hbs", { naming: true, towers });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   });
 });
 
@@ -87,23 +93,23 @@ router.post("/create-tower", authorize, (req, res, next) => {
     });
 });
 //delete tower
-router.post("/delete-tower/:id", (req, res, next)=>{
-  const{id} = req.params
+router.post("/delete-tower/:id", (req, res, next) => {
+  const { id } = req.params;
   TowerModel.findByIdAndDelete(id)
-  .then(() => {
-    User.findByIdAndUpdate(req.session.userInfo._id, { $pull: { towerId: id } })
-    .then(()=>{
-      res.redirect("/profile");
+    .then(() => {
+      User.findByIdAndUpdate(req.session.userInfo._id, {
+        $pull: { towerId: id },
+      })
+        .then(() => {
+          res.redirect("/profile");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     })
-    .catch((err)=>{
-      console.log(err)
-    })
-    
-  }).catch((err) => {
-    console.log(err)
-  });
-})
-
-
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 module.exports = router;
