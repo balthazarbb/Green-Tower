@@ -86,5 +86,24 @@ router.post("/create-tower", authorize, (req, res, next) => {
       console.log(err);
     });
 });
+//delete tower
+router.post("/delete-tower/:id", (req, res, next)=>{
+  const{id} = req.params
+  TowerModel.findByIdAndDelete(id)
+  .then(() => {
+    User.findByIdAndUpdate(req.session.userInfo._id, { $pull: { towerId: id } })
+    .then(()=>{
+      res.redirect("/profile");
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+    
+  }).catch((err) => {
+    console.log(err)
+  });
+})
+
+
 
 module.exports = router;

@@ -30,6 +30,9 @@
 <div>
     {{#each towers}}
     <h1>{{this.towername}}</h1>
+      <form  method="POST" action ="/delete-tower/{{this._id}}">
+          <button style="background-color:#4169E1;", type="deletebtn" class="btn btn-primary" align="right">Delete tower</button>
+      </form>
         {{#each this.plantId}}
             {{#if showButton}}
                  <div class="card mb-3" style="max-width: 540px;">
@@ -67,10 +70,7 @@
         {{/each}}
 
     {{/each}}
-
-
-
-
+</div>
 </section>
 
 
