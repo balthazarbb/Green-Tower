@@ -47,7 +47,7 @@ router.post("/login", (req, res, next) => {
   const { username, password } = req.body;
   // validate input of PW and Username
   console.log(username);
-  User.findById({ username })
+  User.findOne({ username })
     .then((response) => {
       // when email does not exists, response will be an null
       if (!response) {
@@ -60,6 +60,7 @@ router.post("/login", (req, res, next) => {
         // response.password is the hashed password from the db
         // password is the one that the user typed in the input, we use from req.body
         console.log(password);
+        console.log(response)
         bcrypt.compare(password, response.password).then((isMatching) => {
           //compare will return a true or a false
           if (isMatching) {
@@ -156,5 +157,14 @@ router.post("/plants/:towerId/:plantId", authorize, (req, res, next) => {
     res.redirect(`/plants/${towerId}`); //does it go through the router.get route line 87 if res.redirect?
   }); //how to stay on plants but keep towerId that came from the profile? store in session?
 });
+
+router.get('/logout', (req, res, next) => {
+  // set the global variable 'isUserLoggedIn' so that we can use it in hbs
+  req.app.locals.isUserLoggedIn = false  
+
+  // deletes a specific session from DB
+  req.session.destroy()
+  res.redirect('/login')
+})
 
 module.exports = router;
