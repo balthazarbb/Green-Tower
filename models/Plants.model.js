@@ -10,7 +10,8 @@ let PlantsSchema = new Schema({
     timeToHarvest: Number,
     phValue: Number,
     placement: String,
-    plantType: String
+    plantType: String,
+    season: String
 });
 
 const PlantsModel = model("Plants", PlantsSchema);

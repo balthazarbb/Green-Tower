@@ -5,6 +5,11 @@
 <h1>YOUR TOWERS</h1>
 </div>
 
+<a href="/logout">
+ <button style="background-color:#4169E1;", type="logoutbtn" class="btn btn-primary" align="right">Logout</button>
+</a>
+ <button style="background-color:#4169E1;", type="submit" class="btn btn-primary" align="right"name="anotherTower">create a new tower</button>
+</div>
 
 {{!-- FIRST TOWER CARD--}}
 <section>
@@ -14,8 +19,8 @@
   <input type="towername" name="towername" placeholder="name your tower"  >
   <button type="submit" name="create-tower">create</button>
   </form>
- {{/if}} 
- 
+
+
  <div>
  {{#each towers}}
  <h2>{{this.towername}}</h2>
@@ -23,15 +28,31 @@
  {{/each}}
 
 <br>
-<a href="/logout">
- <button style="background-color:#4169E1;", type="logoutbtn" class="btn btn-primary" align="right">Logout</button>
-</a>
- <button style="background-color:#4169E1;", type="submit" class="btn btn-primary" align="right"name="anotherTower">create a new tower</button>
-</div>
+
 <div> 
     <img src="images/Tower.png">
+  <div> 
+    <img src="images/Tower.png" id="towerpic">
     <p>You planted no plants yet! <br>
     Add plants below</p>
+</div>
+<div>
+ 
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="..." alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <button style="background-color:#4169E1;", type="loginbtn" class="btn btn-primary" align="right">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 <div>
     
@@ -52,24 +73,6 @@
 </div>
 </div>
 
-    
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="..." alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          <button style="background-color:#4169E1;", type="loginbtn" class="btn btn-primary" align="right">Login</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
 
     
 <div class="card mb-3" style="max-width: 540px;">
@@ -88,6 +91,42 @@
   </div>
 </div>
 </div>
+ {{/if}} 
+
+{{!-- FULL TOWER CARD--}}
+
+ <div>
+ {{#each towers}}
+ <h2>{{this.towername}}</h2>
+  <a href="/plants/{{this._id}}"><button style="background-color:#4169E1;", type="loginbtn" class="btn btn-primary" align="right">to the plants</button></a>
+    <div> 
+    <img src="images/Tower.png" id="towerpic">
+    <p>You planted no plants yet! <br>
+    Add plants below</p>
+</div>
+<div>
+{{#each this.plantId}}
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{this.img}}" style="width: 50px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{this.plantname}}</h5>
+        <p class="card-text">{{this.description}}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <button style="background-color:#4169E1;", type="loginbtn" class="btn btn-primary" align="right">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{{/each}}
+ {{/each}} 
+  <a href="/create-new-tower"><button style="background-color:#4169E1;">create a new tower</button></a>
+</div>
+
 
 
 </section>

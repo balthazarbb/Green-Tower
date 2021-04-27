@@ -1,10 +1,10 @@
 //connect to db
 
-require('../db')
+require("../db");
 
 //create veggie/herbs/fruits and add to collection
 const myPlants =[
-    {plantname:'Lettuce', img:'images/salat.png', description:'Fresh crisp lettuce, grows fast. Easy to grow.', timeToHarvest: 50, phValue: 6.5, plantType:'leaf'},
+    {plantname:'Lettuce', img:'images/salat.png', description:'Fresh crisp lettuce, grows fast. Easy to grow.', timeToHarvest: 50, phValue: 6.5, plantType:'leaf', season:""},
     {plantname:'Tomato', img:'images/tomato.png', description:'Tomatoes need much light and like it warm.', timeToHarvest: 150, phValue: 6.0, plantType:'bloom'},
     //{plantname:'Radish', img:'', description:'One of the easiest veggies to grow. Don´t forget to eat the green leafs!', timeToHarvest: 45, phValue: 5.5-6.5, plantType:'leaf'},
     {plantname:'Kale', img:'images/kale.png', description:'Very nutritious and healthy, easy to grow', timeToHarvest: 30, phValue: 6.0, plantType:'leaf'},
@@ -21,17 +21,16 @@ const myPlants =[
     //{plantname:'Canteloupe', img:'', description:'Sweet and pretty! Needs warmth and light.', timeToHarvest: 90, phValue: 6.0, plantType:'bloom'}
 ]
 
-
-const mongoose  = require('mongoose');
+const mongoose = require("mongoose");
 //insert plants to DB
-const PlantsModel = require('../models/Plants.model.js')
+const PlantsModel = require("../models/Plants.model.js");
 //insert data to DB
 PlantsModel.create(myPlants)
- .then(() => {
-    console.log(myPlants)
-//close connection
-    mongoose.connection.close()
-})
- .catch(() => {
-    console.log("Nooo")
-});
+  .then(() => {
+    console.log(myPlants);
+    //close connection
+    mongoose.connection.close();
+  })
+  .catch(() => {
+    console.log("Nooo");
+  });
