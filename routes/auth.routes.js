@@ -1,18 +1,15 @@
 const router = require("express").Router();
 const User = require("../models/User.model");
 const bcrypt = require("bcryptjs");
-const TowerModel = require("../models/Towers.model");
-const Plants = require("../models/Plants.model");
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup.hbs");
 });
 
 router.post("/signup", (req, res, next) => {
-  console.log("testtesttest");
   const { username, password } = req.body;
   // check if input of password and username exists
-  console.log(`TESTEETSETEESTSS, ${username}`);
+
   if (!username || !password) {
     res.render("auth/signup.hbs", { msg: "PLease enter all fields" });
     return;
