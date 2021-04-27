@@ -1,20 +1,18 @@
 <div class="text-center">
 
-<h1 style="color: #3CB371">Green-Tower</h1>
- <h2 >Please sign up</h1>
-
-<form method="POST" action="/signup">
-  <div class="mb-3">
-    <input type="username" class="col-form-label" placeholder="Username" name="username">
-  </div>
-  <div class="mb-3">
-    <input type="password" class="col-form-label" name="password" placeholder="Password" id="exampleInputPassword1">
-        <div id="passwordHelp" class="form-text">Your Password must contain 8 characters, one number, and an uppercase letter.</div>
-
-  </div>
-  <button style="background-color:#4169E1;" type="submit" class="btn btn-primary">Submit</button>
-</form>
-
+  <h1 style="color: #3CB371">Green-Tower</h1>
+     <h2 >Please sign up</h1>
+      <form method="POST" action="/signup">
+      <div class="mb-3">
+         <input type="username" class="col-form-label" placeholder="Username" name="username">
+     </div>
+     <div class="mb-3">
+        <input type="password" class="col-form-label" name="password" placeholder="Password" id="exampleInputPassword1">
+     <div id="passwordHelp" class="form-text">Your Password must contain 8 characters, one number, and an uppercase letter.</div>
+    </div>
+   <button style="background-color:#4169E1;" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+<p><a href="/login"> signin </p></a> 
 {{#if msg}}
   <div class="error">{{msg}}</div>
 {{/if}}
