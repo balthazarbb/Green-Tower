@@ -1,14 +1,12 @@
 <a href="/logout">
  <button style="background-color:#4169E1;", type="logoutbtn" class="btn btn-primary" align="right">Logout</button>
 </a>
- <button style="background-color:#4169E1;", type="submit" class="btn btn-primary" align="right"name="anotherTower">create a new tower</button>
 </div>
 
 {{!-- Headline --}}
 <div>
 <h1>YOUR TOWERS</h1>
 </div>
-
 
 
 {{!-- FIRST TOWER CARD--}}
@@ -19,18 +17,6 @@
   <input type="towername" name="towername" placeholder="name your tower"  >
   <button type="submit" name="create-tower">create</button>
   </form>
-
-
- <div>
- {{#each towers}}
- <h2>{{this.towername}}</h2>
-  <a href="/plants/{{this._id}}"><button style="background-color:#4169E1;", type="loginbtn" class="btn btn-primary" align="right">to the plants</button></a>
- {{/each}}
-
-<br>
-
-<div> 
-    <img src="images/Tower.png">
   <div> 
     <img src="images/Tower.png" id="towerpic">
     <p>You planted no plants yet! <br>
@@ -73,7 +59,7 @@
 </div>
 </div>
 
-
+<div>
     
 <div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
@@ -91,6 +77,7 @@
   </div>
 </div>
 </div>
+
  {{/if}} 
 
 {{!-- FULL TOWER CARD--}}
