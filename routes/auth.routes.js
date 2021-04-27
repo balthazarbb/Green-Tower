@@ -47,7 +47,7 @@ router.post("/login", (req, res, next) => {
   const { username, password } = req.body;
   // validate input of PW and Username
   console.log(username);
-  User.findById({ username })
+  User.findOne({ username })
     .then((response) => {
       // when email does not exists, response will be an null
       if (!response) {
@@ -96,13 +96,28 @@ router.get("/profile", authorize, (req, res, next) => {
   console.log(naming);
   //if tower exi
   User.findById(userId).then((user) => {
-    TowerModel.find({ _id: { $in: [...user.towerId] } }).then((towers) => {
-      res.render("profile.hbs", { naming, towers });
-    });
+    TowerModel.find({ _id: { $in: [...user.towerId] } })
+      .populate("plantId")
+      .then((towers) => {
+        console.log(towers);
+        res.render("profile.hbs", { naming, towers });
+      });
   });
 
   //else show card with towername
   //  res.render("/profile.hbs", {towername});   can we use towername here already? because input is in line 95
+});
+
+//create a new tower above the tower cards
+router.get("/create-new-tower", authorize, (req, res, next) => {
+  const userId = req.session.userInfo._id;
+
+  //if tower exi
+  User.findById(userId).then((user) => {
+    TowerModel.find({ _id: { $in: [...user.towerId] } }).then((towers) => {
+      res.render("profile.hbs", { naming: true, towers });
+    });
+  });
 });
 
 router.post("/create-tower", authorize, (req, res, next) => {
