@@ -99,7 +99,7 @@ let TowerSchema = new Schema({
 
 # Git #
 
-    [GitHub Pages](https://github.com/balthazarbb/Green-Tower.git).
+    https://github.com/balthazarbb/Green-Tower.git
 
 # Slides #
 
