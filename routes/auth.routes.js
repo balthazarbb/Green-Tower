@@ -153,8 +153,8 @@ router.post("/plants/:towerId/:plantId", authorize, (req, res, next) => {
     { new: true }
   ).then((updatedTower) => {
     // req.session.userInfo = updatedUser; //update the session
-    res.redirect("/profile"); //does it go through the router.get route line 87 if res.redirect?
-  });
+    res.redirect(`/plants/${towerId}`); //does it go through the router.get route line 87 if res.redirect?
+  }); //how to stay on plants but keep towerId that came from the profile? store in session?
 });
 
 module.exports = router;
