@@ -26,21 +26,23 @@ const capitalized = (string) =>
 app.locals.title = `${capitalized(projectName)} created with Ironlauncher`;
 
 // SET UP SESSION
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
 
-app.use(session({
-  secret: process.env.SESSION_KEY,
-  saveUninitialized: false, 
-  resave: false, 
-  cookie: {
-    maxAge: 24 * 60 * 60 * 1000// in milliseconds
-  },
-  store: MongoStore.create({
-    mongoUrl:  process.env.MONGODB_URI || "mongodb://localhost/Green-Tower",
-    ttl:  24 * 60 * 60 // 1 day => in seconds
+app.use(
+  session({
+    secret: process.env.SESSION_KEY,
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+      maxAge: 24 * 60 * 60 * 1000, // in milliseconds
+    },
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/Green-Tower",
+      ttl: 24 * 60 * 60, // 1 day => in seconds
+    }),
   })
-}));
+);
 // 👇 Start handling routes here
 const index = require("./routes/index");
 app.use("/", index);
@@ -48,6 +50,12 @@ app.use("/", index);
 //start handling authorized routes
 const authRoutes = require("./routes/auth.routes");
 app.use("/", authRoutes);
+
+const plantsRoutes = require("./routes/plants.routes");
+app.use("/", plantsRoutes);
+
+const profileRoutes = require("./routes/profile.routes");
+app.use("/", profileRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
