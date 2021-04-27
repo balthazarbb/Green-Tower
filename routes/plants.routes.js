@@ -17,7 +17,7 @@ router.get("/plants/:id", authorize, (req, res, next) => {
   const towerId = req.params.id;
   Plants.find()
     .then((plants) => {
-      console.log(plants);
+      //  console.log(plants);
       res.render("plants.hbs", { plants, towerId }); // {{plants.name}}
     })
     .catch((err) => {
@@ -28,14 +28,21 @@ router.get("/plants/:id", authorize, (req, res, next) => {
 router.post("/plants/:towerId/:plantId", authorize, (req, res, next) => {
   const plantId = req.params.plantId; // how do we send the id over with the button?
   const towerId = req.params.towerId;
-  TowerModel.findByIdAndUpdate(
-    towerId,
-    { $push: { plantId } },
-    { new: true }
-  ).then((updatedTower) => {
-    // req.session.userInfo = updatedUser; //update the session
-    res.redirect(`/plants/${towerId}`); //does it go through the router.get route line 87 if res.redirect?
-  }); //how to stay on plants but keep towerId that came from the profile? store in session?
+  //if towerModel.plantId.length==3:msgTower is full, please create new tower
+
+  TowerModel.findByIdAndUpdate(towerId, { $push: { plantId } }, { new: true })
+    .then((updatedTower) => {
+      if (updatedTower.plantId.length >= 3) {
+        res.redirect(`/profile`);
+      } else {
+        // req.session.userInfo = updatedUser; //update the session
+        res.redirect(`/plants/${towerId}`); //does it go through the router.get route line 87 if res.redirect?
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  //how to stay on plants but keep towerId that came from the profile? store in session?
 });
 
 module.exports = router;

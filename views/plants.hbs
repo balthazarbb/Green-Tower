@@ -18,6 +18,8 @@
   </div>
 </nav>
 
+
+
 {{#each plants}}
 
 <div class="card mb-3" style="max-width: 540px;">
@@ -32,7 +34,9 @@
       <form method="POST" action="/plants/{{../towerId}}/{{this._id}}">  <button style="background-color:#4169E1;", type="submit" class="btn btn-primary" align="right">add to tower</button>
   </form>
  <a href="/profile"><button style="background-color:#4169E1;", type="submit" class="btn btn-primary" align="right">Profile</button></a>
-  
+    {{#if msg}}
+        <div class="error">{{msg}}</div>
+    {{/if}}
       </div>
     </div>
   </div>
