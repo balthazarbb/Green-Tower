@@ -60,7 +60,7 @@ router.post("/login", (req, res, next) => {
         // response.password is the hashed password from the db
         // password is the one that the user typed in the input, we use from req.body
         console.log(password);
-        console.log(response)
+        console.log(response);
         bcrypt.compare(password, response.password).then((isMatching) => {
           //compare will return a true or a false
           if (isMatching) {
@@ -100,8 +100,27 @@ router.get("/profile", authorize, (req, res, next) => {
     TowerModel.find({ _id: { $in: [...user.towerId] } })
       .populate("plantId")
       .then((towers) => {
-        console.log(towers);
-        res.render("profile.hbs", { naming, towers });
+        let clonedTowers = JSON.parse(JSON.stringify(towers));
+        clonedTowers.forEach((singleTower) => {
+          // or can be of length 2
+          // or can be of lenght 1
+          // or can have no Plants
+          console.log(singleTower.plantId);
+          if (singleTower.plantId.length == 2) {
+            singleTower.plantId.push({ showButton: true });
+          }
+          if (singleTower.plantId.length == 1) {
+            singleTower.plantId.push({ showButton: true });
+            singleTower.plantId.push({ showButton: true });
+          }
+          if (singleTower.plantId.length == 0) {
+            singleTower.plantId.push({ showButton: true });
+            singleTower.plantId.push({ showButton: true });
+            singleTower.plantId.push({ showButton: true });
+          }
+          console.log(singleTower.plantId);
+        });
+        res.render("profile.hbs", { naming, towers: clonedTowers });
       });
   });
 
@@ -173,13 +192,13 @@ router.post("/plants/:towerId/:plantId", authorize, (req, res, next) => {
   }); //how to stay on plants but keep towerId that came from the profile? store in session?
 });
 
-router.get('/logout', (req, res, next) => {
+router.get("/logout", (req, res, next) => {
   // set the global variable 'isUserLoggedIn' so that we can use it in hbs
-  req.app.locals.isUserLoggedIn = false  
+  req.app.locals.isUserLoggedIn = false;
 
   // deletes a specific session from DB
-  req.session.destroy()
-  res.redirect('/login')
-})
+  req.session.destroy();
+  res.redirect("/login");
+});
 
 module.exports = router;
