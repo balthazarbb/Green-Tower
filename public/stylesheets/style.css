@@ -26,20 +26,38 @@ h1 {
 .btn-group {
   padding: 10px 24px;
   cursor: pointer;
-  float: right; 
+  float: right;
   border-color: none;
   color: green;
+  display: flex;
+  justify-content: flex-end;
 }
 .profile-btns {
   border-radius: 4px;
-  background-color:#4169E1;
+  background-color: #4169e1;
   color: white;
+  margin: 5px;
 }
-
-
-
 
 .error {
   color: red;
   margin-top: 10px;
+}
+
+/* Profile */
+
+.card-body {
+  display: flex;
+  justify-content: center;
+}
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-top: 50px;
+}
+
+.toRight {
+  display: flex;
+  justify-content: flex-end;
 }
