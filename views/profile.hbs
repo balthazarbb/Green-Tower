@@ -8,8 +8,7 @@
     </a>
 
     <ul class="nav nav-pills">
-
-      <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+     <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
     </ul>
   </header>
 </div>
@@ -17,15 +16,19 @@
 
 
 {{!-- Headline --}}
-
 <div class="tower">
-<div>
 <h1>YOUR TOWERS</h1>
 </div>
+ <div>
+  <a href="/create-new-tower"><button style="background-color:#4169E1;">create a new tower</button></a>
 </div>
 
 {{!-- FIRST TOWER CARD--}}
 <section>
+
+
+
+
     {{!-- naming:  --}}
 {{#if naming}}
 <form method="POST" action="/create-tower">
@@ -49,10 +52,8 @@
             {{#if showButton}}
                  <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
-                   
-                           
-                            <div class="card-body">
-                            
+                        <div class="card-body">
+                    
                         <a href="/plants/{{../this._id}}"><button style="background-color:#4169E1;", type="loginbtn" class="btn btn-primary">add plant</button></a>
 
                             </div>
