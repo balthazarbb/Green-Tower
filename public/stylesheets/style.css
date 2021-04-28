@@ -39,3 +39,7 @@ h1 {
 
 
 
+.error {
+  color: red;
+  margin-top: 10px;
+}
