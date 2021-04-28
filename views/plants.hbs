@@ -30,10 +30,12 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{this.plantname}}</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <form method="POST" action="/plants/{{../towerId}}/{{this._id}}">  <button style="background-color:#4169E1;", type="submit" class="btn btn-primary" align="right">add to tower</button>
+        <p class="card-text">{{this.description}} harvest window {{this.plantname}}</p>
+        <div class="btn-group">
+      <form method="POST" action="/plants/{{../towerId}}/{{this._id}}">  <button type="submit" class="profile-btns" align="right">add to tower</button>
       </form>
-        <a href="/profile"><button style="background-color:#4169E1;", type="submit" class="btn btn-primary" align="right">Profile</button></a>
+        <a href="/profile"><button type="submit" class="profile-btns" align="right">Profile</button></a>
+        </div>
       </div>
     </div>
   </div>

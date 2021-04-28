@@ -22,3 +22,20 @@ h1 {
 .text-center {
   width: 300 px;
 }
+
+.btn-group {
+  padding: 10px 24px;
+  cursor: pointer;
+  float: right; 
+  border-color: none;
+  color: green;
+}
+.profile-btns {
+  border-radius: 4px;
+  background-color:#4169E1;
+  color: white;
+}
+
+
+
+
