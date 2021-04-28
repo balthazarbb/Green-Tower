@@ -1,19 +1,33 @@
-<div class="text-center">
 
-    <h1 style="color: #3CB371">Green-Tower</h1>
-     <h2>Please log in</h2>
-       <form method="POST" action="/login">
-           <div class="mb-3">
-               <input type="text" name="username"class="col-form-label" placeholder="Username" id="username">
-          </div>
-          <div class="mb-3">
-              <input type="password" name="password" class="col-form-label" placeholder="Password" id="exampleInputPassword1">
-          </div>
-         <button style="background-color:#4169E1;", type="loginbtn" class="btn btn-primary" align="right">Login</button>
-      </form>
-<p><a href="/signup"> signup first</p></a> 
 
-    {{#if msg}}
+<div class="row align-items-center g-5 py-5">
+
+    <div class="col-10 mx-auto col-lg-5">
+    <form class="p-5 border rounded-3 bg-light" method="POST" action="/login">
+
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 mb-3">Green-Tower</h1>
+      <p class="col-lg-10 fs-4">Please login</p>
+    </div>
+
+
+        <div class="form-floating mb-3">
+          <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username">
+          <label for="floatingInput">Username</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+ 
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+   
+       <small class="text-muted"><a href="/signup"> signup first</a></small>
+
+         {{#if msg}}
         <div class="error">{{msg}}</div>
     {{/if}}
-</div>
+
+      </form>
+    </div>
+  </div>

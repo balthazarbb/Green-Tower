@@ -22,3 +22,8 @@ h1 {
 .text-center {
   width: 300 px;
 }
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
