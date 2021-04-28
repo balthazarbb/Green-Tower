@@ -31,7 +31,7 @@
              <div class="card-body">
                  <div  class="card-inner">
                      <h5 class="card-title">{{this.plantname}}</h5>
-                      <p class="card-text">{{this.description}} harvest window {{this.plantname}}</p>
+                      <p class="card-text">{{this.description}} Season: {{this.season}} <br> Time to harvest: about {{this.timeToHarvest}} days <br> Ph value: {{this.phValue}}  <br> Fertilizer type: {{this.plantType}}</p>
                       <div class="btn-group">
                          <form method="POST" action="/plants/{{../towerId}}/{{this._id}}"> 
                             <button type="submit" class="profile-btns" align="right">add to tower</button>
