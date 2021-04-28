@@ -23,21 +23,24 @@
 {{#each plants}}
 
 <div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
- <img src="/{{this.img}}" class="plants-img">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{this.plantname}}</h5>
-        <p class="card-text">{{this.description}} harvest window {{this.plantname}}</p>
-        <div class="btn-group">
-      <form method="POST" action="/plants/{{../towerId}}/{{this._id}}">  <button type="submit" class="profile-btns" align="right">add to tower</button>
-      </form>
-        <a href="/profile"><button type="submit" class="profile-btns" align="right">Profile</button></a>
+   <div class="row g-0">
+        <div class="col-md-4">
+           <img src="/{{this.img}}" class="plants-img">
         </div>
+        <div class="col-md-8">
+             <div class="card-body">
+                 <div  class="card-inner">
+                     <h5 class="card-title">{{this.plantname}}</h5>
+                      <p class="card-text">{{this.description}} harvest window {{this.plantname}}</p>
+                      <div class="btn-group">
+                         <form method="POST" action="/plants/{{../towerId}}/{{this._id}}"> 
+                            <button type="submit" class="profile-btns" align="right">add to tower</button>
+                         </form>
+                         <a href="/profile"><button type="submit" class="profile-btns" align="right">Profile</button></a>
+        	            </div>
+                  </div>  
+             </div>
       </div>
-    </div>
-  </div>
+   </div>
 </div>
 {{/each}}
