@@ -84,7 +84,7 @@ router.get("/logout", (req, res, next) => {
 
   // deletes a specific session from DB
   req.session.destroy();
-  res.redirect("/login");
+  res.redirect("/");
 });
 
 module.exports = router;
