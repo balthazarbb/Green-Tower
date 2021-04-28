@@ -56,3 +56,8 @@ h1 {
   align-content: center;
   margin-top: 50px;
 }
+
+.toRight {
+  display: flex;
+  justify-content: flex-end;
+}
