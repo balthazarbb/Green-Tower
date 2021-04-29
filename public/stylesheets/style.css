@@ -9,7 +9,7 @@ a {
 }
 
 h1 {
-  color: 15px;
+  color: #3a3b39;
 }
 
 .plants-img {
@@ -36,7 +36,7 @@ h1 {
 }
 .profile-btns {
   border-radius: 4px;
-  background-color: #4169e1;
+  background-color: #3d85c6;
   color: white;
   margin: 5px;
 }
@@ -76,8 +76,18 @@ h1 {
 }
 
 .colour {
-  background-color: teal;
+  background-color: #e4e8e3;
   margin: 30px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.radius {
+  border-radius: 40px;
+}
+
+.fontSize {
+  font-size: 1.5em;
 }
 
 .start{

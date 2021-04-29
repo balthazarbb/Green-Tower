@@ -16,10 +16,13 @@
 <section class="tower-col">
 
 {{!-- Headline --}}
-<div>
-<h1>YOUR TOWERS</h1>
-
-<a href="/create-new-tower"><button style="background-color:#4169E1;">create a new tower</button></a>
+<div style="width: 540px">
+    <div class="tower">    
+        <h1>YOUR TOWERS</h1>
+    </div>
+      <div class=" toRight"> 
+    <a href="/create-new-tower"  class="fontSize nav-item text-decoration-none">create a new tower</a>
+    </div>
 </div>
 
 {{!-- FIRST TOWER CARD--}}
@@ -49,7 +52,7 @@
         </form>
         {{#each this.plantId}}
             {{#if showButton}}
-                <div class="card mb-3 tower-col" style="max-width: 540px;">
+                <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="card-body">
                     
