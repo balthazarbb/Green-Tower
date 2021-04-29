@@ -13,25 +13,19 @@
   </header>
 </div>
 
-<div class="tower-col">
 
-    {{!-- Headline --}}
-
-     
-    </div>
-
+<div class="tower-col ">
 {{!-- FIRST TOWER CARD--}}
-    <div >
-    {{!-- naming:  --}}
-         <div class="colour">
-           
-                 <div> 
-                       <div class="align">
+      <div class="width">
+           {{!-- naming:  --}}
+              <div class="colour">
+                  <div> 
+                      <div class="align">
                          <img src="images/Tower.png" id="towerpic">
                          <div class="center-col">
                               <div class=" toRight"> 
-         <a href="/create-new-tower"  class="nav-item text-decoration-none size">create a new tower</a>
-     </div>
+                                  <a href="/create-new-tower"  class="nav-item text-decoration-none size">create a new tower</a>
+                              </div>
                               {{#if naming}}
                                 <form method="POST" action="/create-tower">
                                      <input type="towername" name="towername" placeholder="name your tower"  >
@@ -42,39 +36,36 @@
                                      <p> Add plants below</p>
                                 </div>
                          </div>
-                       </div>
-                 </div>
-         
-    </div>
-    <div>
-      <div class="tower">    
-        <h1 class="size2">YOUR TOWERS</h1>
-     </div>
-    <div >
-    {{#each towers}}
-    <div class="colour">
-        <h1>{{this.towername}}</h1>
-        <div class="toRight tower-col2">
-             <form  method="POST" action ="/delete-tower/{{this._id}}">
-                   <button type="submit" class="fontSize nav-item  btn-del" >DELETE TOWER</button>
-              </form>
-        </div>
-
-        {{#each this.plantId}}
-            {{#if showButton}}
-                <div class="card mb-3 mycard">
-                    <div class="row g-0">
-                        <div class="card-body">
-                    
-                              <a href="/plants/{{../this._id}}"><button  type="loginbtn" class="btn btn-primary profile-btns">add plant</button></a>
-
-                        </div>
-                            
-                    </div>
+                      </div>
+                  </div>
+               </div>
+          <div>
+          <div class="tower">    
+            <h1 class="size">YOUR TOWERS</h1>
+          </div>
+          <div >
+           {{#each towers}}
+           <div class="colour">
+              <h1>{{this.towername}}</h1>
+                <div class="toRight tower-col2">
+                   <form  method="POST" action ="/delete-tower/{{this._id}}">
+                     <button type="submit" class="fontSize2 nav-item  btn-del" >DELETE TOWER</button>
+                  </form>
                 </div>
-            {{else}}
-                <div class="card mb-3 mycard">
-                    <div class="row g-0">
+
+              {{#each this.plantId}}
+                {{#if showButton}}
+                    <div class="card mb-3 mycard">
+                        <div class="row g-0">
+                            <div class="card-body">
+                    
+                                <a href="/plants/{{../this._id}}"><button  type="loginbtn" class="btn btn-primary profile-btns">add plant</button></a>
+                           </div>
+                        </div>
+                    </div>
+                {{else}}
+                    <div class="card mb-3 mycard">
+                      <div class="row g-0">
                         <div class="col-md-4 tower">
                              <img src="{{this.img}}"  class="plants-img">
                         </div>
@@ -83,20 +74,21 @@
                                  <div  class="card-inner">
                                         <h5 class="card-title">{{this.plantname}}</h5>
                                         <p >{{this.description}}</p>      
-                                        <div class="toRight tower-col2">
+                                        <div class="toRight ">
                                           <form  method="POST" action ="/delete-plant/{{../this._id}}/{{this._id}}">
-                                               <button  type="submit" class="btn btn-primary profile-btns" align="right">-</button>
+                                               <button  type="submit" class="btn profile-btns" align="right">-</button>
                                           </form>     
                                         </div>    
                                  </div>
                             </div>
                         </div>
                     </div>
-                </div>
+             </div>
             {{/if}}
         {{/each}}
     </div>
     {{/each}}
+</div>
 </div>
 </div>
 </div>
