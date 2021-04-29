@@ -28,24 +28,28 @@
 {{!-- FIRST TOWER CARD--}}
 <section >
     {{!-- naming:  --}}
-    <div >
-            {{#if naming}}
-                <form method="POST" action="/create-tower">
-                    <input type="towername" name="towername" placeholder="name your tower"  >
-                    <button type="submit" name="create-tower">create</button>
-                </form>
-                  {{/if}} 
+    <div class="colour">
+           
                  <div> 
-                       <div class="tower">
-                        <img src="images/Tower.png" id="towerpic">
-                        <p>You planted no plants yet! <br>
-                          Add plants below</p>
-                      </div>
+                       <div class="align">
+                         <img src="images/Tower.png" id="towerpic">
+                         <div class="center-col">
+                              {{#if naming}}
+                                <form method="POST" action="/create-tower">
+                                     <input type="towername" name="towername" placeholder="name your tower"  >
+                                     <button type="submit" name="create-tower">create</button>
+                                </form>
+                               {{/if}} 
+                                <div class="margin">
+                                     <p> Add plants below</p>
+                                </div>
+                         </div>
+                       </div>
                  </div>
          
-     </div>
+    </div>
 
-<div >
+    <div >
     {{#each towers}}
     <div class="colour">
         <h1>{{this.towername}}</h1>
@@ -57,18 +61,18 @@
 
         {{#each this.plantId}}
             {{#if showButton}}
-                <div class="card mb-3" style="width: 540px">
+                <div class="card mb-3 mycard">
                     <div class="row g-0">
                         <div class="card-body">
                     
-                              <a href="/plants/{{../this._id}}"><button style="background-color:#4169E1;", type="loginbtn" class="btn btn-primary">add plant</button></a>
+                              <a href="/plants/{{../this._id}}"><button  type="loginbtn" class="btn btn-primary profile-btns">add plant</button></a>
 
                         </div>
                             
                     </div>
                 </div>
             {{else}}
-                <div class="card mb-3" style="width: 540px">
+                <div class="card mb-3 mycard">
                     <div class="row g-0">
                         <div class="col-md-4 tower">
                              <img src="{{this.img}}"  class="plants-img">
@@ -80,7 +84,7 @@
                                         <p >{{this.description}}</p>      
                                         <div class="toRight tower-col2">
                                           <form  method="POST" action ="/delete-plant/{{../this._id}}/{{this._id}}">
-                                               <button style="background-color:#87253e;" type="submit" class="btn btn-primary" align="right">-</button>
+                                               <button  type="submit" class="btn btn-primary profile-btns" align="right">-</button>
                                           </form>     
                                         </div>    
                                  </div>

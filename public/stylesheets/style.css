@@ -47,6 +47,14 @@ h1 {
 }
 
 /* Profile */
+.margin {
+  margin-top: 20px;
+}
+
+.align {
+  display: flex;
+  justify-content: space-around;
+}
 
 .card-body {
   display: flex;
@@ -82,12 +90,22 @@ h1 {
   justify-content: flex-start;
   align-items: flex-end;
 }
+.center-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.mycard {
+}
 
 .colour {
   background-color: #e4e8e3;
   margin: 30px;
   padding: 20px;
   border-radius: 15px;
+  width: 80%;
 }
 
 .radius {

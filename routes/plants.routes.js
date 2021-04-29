@@ -18,8 +18,20 @@ router.get("/plants/:id", authorize, (req, res, next) => {
   Plants.find()
     .then((plants) => {
       //  console.log(plants);
-      res.render("plants.hbs", { plants, towerId }); // {{plants.name}}
+      TowerModel.findById(towerId).then((tower) => {
+        let plantsInTower = tower.plantId;
+        // magic will happend
+
+        let clonedPlants = JSON.parse(JSON.stringify(plants));
+        clonedPlants.forEach((plant) => {
+          if (plantsInTower.includes(plant._id)) plant.isInTower = true;
+        });
+        console.log(clonedPlants);
+
+        res.render("plants.hbs", { plants: clonedPlants, towerId }); // {{plants.name}}
+      });
     })
+    .catch((err) => {})
     .catch((err) => {
       console.log(err);
     });
