@@ -102,6 +102,16 @@ h1 {
   font-size: 1.3em;
 }
 
+/*btn delete tower*/
+.btn-del {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
 /* Start-Page*/
 
 .start {

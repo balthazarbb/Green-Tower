@@ -29,19 +29,21 @@
 <section >
     {{!-- naming:  --}}
     <div >
-{{#if naming}}
-<form method="POST" action="/create-tower">
- 
-    <input type="towername" name="towername" placeholder="name your tower"  >
-    <button type="submit" name="create-tower">create</button>
-</form>
-    <div> 
-        <img src="images/Tower.png" id="towerpic">
-        <p>You planted no plants yet! <br>
-        Add plants below</p>
-    </div>
-  {{/if}}   
-  </div>
+            {{#if naming}}
+                <form method="POST" action="/create-tower">
+                    <input type="towername" name="towername" placeholder="name your tower"  >
+                    <button type="submit" name="create-tower">create</button>
+                </form>
+                  {{/if}} 
+                 <div> 
+                       <div class="tower">
+                        <img src="images/Tower.png" id="towerpic">
+                        <p>You planted no plants yet! <br>
+                          Add plants below</p>
+                      </div>
+                 </div>
+         
+     </div>
 
 <div>
     {{#each towers}}
@@ -49,7 +51,7 @@
         <h1>{{this.towername}}</h1>
         <div class="toRight tower-col2">
              <form  method="POST" action ="/delete-tower/{{this._id}}">
-                   <button style="background-color:#4169E1;" type="submit" class="btn btn-primary" align="right">DELETE TOWER</button>
+                   <button type="submit" class=" btn-del" align="right">DELETE TOWER</button>
               </form>
               <form  method="POST" action ="/edit-plants/{{this._id}}">
                   <button style="background-color:#4169E1;" type="submit" class="btn btn-primary" align="right">EDIT PLANTS</button>
@@ -81,7 +83,7 @@
                                         <h5 class="card-title">{{this.plantname}}</h5>
                                         <p >{{this.description}}</p>      
                                         <div class="toRight tower-col2">
-                                          <form  method="POST" action ="/delete-plant/{{../this._id}}/{{this._id}}">
+                                          <form  method="POST" action ="/delete-plant/{{this._id}}/{{this.plantId}}">
                                                <button style="background-color:#87253e;" type="submit" class="btn btn-primary" align="right">-</button>
                                           </form>     
                                         </div>    
