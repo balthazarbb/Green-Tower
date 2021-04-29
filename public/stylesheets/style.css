@@ -88,7 +88,6 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
 }
 .center-col {
   display: flex;
@@ -97,6 +96,17 @@ h1 {
   align-items: flex-start;
 }
 
+.center-col2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mylogin {
+  width: 70%;
+  margin-bottom: 40px;
+}
 
 .colour {
   background-color: #e4e8e3;
@@ -132,13 +142,11 @@ h1 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-left: 25%;
-  margin-right: 25%;
-  font-size: x-large;
 }
 
 .startimg {
-  width: 60%;
+  width: 20%;
+  margin: 20px;
 }
 
 .nav-item {
@@ -162,4 +170,12 @@ h1 {
   padding-left: 10px;
   padding-bottom: 5px;
   padding-right: 10px;
+}
+.btn {
+  background-color: #3d85c6;
+}
+
+.text {
+  font-size: 15px;
+  margin-right: 20px;
 }
