@@ -19,23 +19,23 @@
 
 <div class="card mb-3" style="max-width: 540px;">
    <div class="row g-0">
-        <div class="col-md-4">
-           <img src="/{{this.img}}" class="plants-img">
-        </div>
-        <div class="col-md-8">
-             <div class="card-body">
-                 <div  class="card-inner">
-                     <h5 class="card-title">{{this.plantname}}</h5>
-                      <p class="card-text">{{this.description}} Season: {{this.season}} <br> Time to harvest: about {{this.timeToHarvest}} days <br> Ph value: {{this.phValue}}  <br> Fertilizer type: {{this.plantType}}</p>
-                      <div class="btn-group">
-                         <form method="POST" action="/plants/{{../towerId}}/{{this._id}}"> 
-                            <button type="submit" class="profile-btns" align="right">add to tower</button>
-                         </form>
-                         <a href="/profile"><button type="submit" class="profile-btns" align="right">Profile</button></a>
-        	            </div>
-                  </div>  
-             </div>
+      <div class="col-md-4">
+        <img src="/{{this.img}}" class="plants-img">
       </div>
+        <div class="col-md-8">
+            <div class="card-body">
+              <div  class="card-inner">
+                <h5 class="card-title">{{this.plantname}}</h5>
+                  <p class="card-text">{{this.description}} Season: {{this.season}} <br> Time to harvest: about {{this.timeToHarvest}} days <br> Ph value: {{this.phValue}}  <br> Fertilizer type: {{this.plantType}}</p>
+                    <div class="btn-group">
+                      <form method="POST" action="/plants/{{../towerId}}/{{this._id}}"> 
+                        <button type="submit" class="profile-btns" align="right">add to tower</button>
+                      </form>
+                      <a href="/profile"><button type="submit" class="profile-btns" align="right">Profile</button></a>
+        	          </div>
+              </div>  
+            </div>
+        </div>
    </div>
 </div>
 {{/each}}
