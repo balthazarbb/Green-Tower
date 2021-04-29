@@ -13,23 +13,19 @@
   </header>
 </div>
 
-
+<section class="tower-col">
 
 {{!-- Headline --}}
-<div class="tower">
+<div>
 <h1>YOUR TOWERS</h1>
-</div>
- <div>
-  <a href="/create-new-tower"><button style="background-color:#4169E1;">create a new tower</button></a>
+
+<a href="/create-new-tower"><button style="background-color:#4169E1;">create a new tower</button></a>
 </div>
 
 {{!-- FIRST TOWER CARD--}}
-<section>
-
-
-
-
+<section >
     {{!-- naming:  --}}
+    <div >
 {{#if naming}}
 <form method="POST" action="/create-tower">
     <label>Towername</label>
@@ -41,8 +37,10 @@
         <p>You planted no plants yet! <br>
         Add plants below</p>
     </div>
-  {{/if}}    
-<div>
+  {{/if}}   
+  </div>
+
+<div class="colour">
     {{#each towers}}
     <h1>{{this.towername}}</h1>
       <form  method="POST" action ="/delete-tower/{{this._id}}">
@@ -50,7 +48,7 @@
       </form>
         {{#each this.plantId}}
             {{#if showButton}}
-                 <div class="card mb-3" style="max-width: 540px;">
+                 <div class="card mb-3 tower-col" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="card-body">
                     
@@ -64,7 +62,7 @@
             {{else}}
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
-                        <div class="col-md-4">
+                        <div class="col-md-4 tower">
                              <img src="{{this.img}}"  class="plants-img">
                         </div>
                         <div class="col-md-8" >
@@ -83,6 +81,7 @@
 
     {{/each}}
 </div>
+</section>
 </section>
 
 
