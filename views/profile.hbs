@@ -4,7 +4,7 @@
   <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      <span class="fs-4">Green-Tower</span>
+      <span class="fs-4"><img src="/images/greentower.png"></span>
     </a>
 
     <ul class="nav nav-pills">
@@ -13,27 +13,28 @@
   </header>
 </div>
 
-<section class="tower-col">
+<div class="tower-col">
 
-{{!-- Headline --}}
-<div style="width: 540px">
-    <div class="tower">    
+    {{!-- Headline --}}
+    <div>
+      <div class="tower">    
         <h1>YOUR TOWERS</h1>
+     </div>
+     
     </div>
-      <div class=" toRight"> 
-    <a href="/create-new-tower"  class="fontSize nav-item text-decoration-none">create a new tower</a>
-    </div>
-</div>
 
 {{!-- FIRST TOWER CARD--}}
-<section >
+    <div >
     {{!-- naming:  --}}
-    <div class="colour">
+         <div class="colour">
            
                  <div> 
                        <div class="align">
                          <img src="images/Tower.png" id="towerpic">
                          <div class="center-col">
+                              <div class=" toRight"> 
+         <a href="/create-new-tower"  class="fontSize nav-item text-decoration-none">create a new tower</a>
+     </div>
                               {{#if naming}}
                                 <form method="POST" action="/create-tower">
                                      <input type="towername" name="towername" placeholder="name your tower"  >
@@ -97,8 +98,8 @@
     </div>
     {{/each}}
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
 
