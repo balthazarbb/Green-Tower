@@ -113,23 +113,20 @@ router.post("/delete-tower/:id", (req, res, next) => {
 });
 
 //delete single plants from profile
-router.post("/delete-plant/:towerId/:plantId", (req, res, next)=>{
-  const towerId = req.params.towerId;
+router.post("/delete-plant/:_id/:plantId", (req, res, next)=>{
+  const towerId = req.params._id;
   const plantId = req.params.plantId;
-  TowerModel.findByIdAndUpdate(towerId)
+  console.log(plantId)
+  console.log(towerId)
+  console.log("TEST")
+
+  TowerModel.findByIdAndUpdate(towerId, {$pull: {plantId}})
   .then(() => {
-    Plants.findByIdAndDelete(plantId,{
-      $pull: {plantId}
-    })
-    .then((err)=>{
-      res.redirect("/pofile");
-    })
-    
-  })
-  .catch((err) => {
-    console.log(err)
-    
+    res.redirect("/profile")
+  }).catch((err) => {
+    next(err)
   });
+
 });
 
 module.exports = router;
