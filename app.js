@@ -23,7 +23,7 @@ const projectName = "Green-Tower";
 const capitalized = (string) =>
   string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)} created with Ironlauncher`;
+app.locals.title = `${capitalized(projectName)}`;
 
 // SET UP SESSION
 const session = require("express-session");
