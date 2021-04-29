@@ -45,23 +45,19 @@
          
      </div>
 
-<div>
+<div >
     {{#each towers}}
     <div class="colour">
         <h1>{{this.towername}}</h1>
         <div class="toRight tower-col2">
              <form  method="POST" action ="/delete-tower/{{this._id}}">
-                   <button type="submit" class=" btn-del" align="right">DELETE TOWER</button>
+                   <button type="submit" class="fontSize nav-item  btn-del" >DELETE TOWER</button>
               </form>
-              <form  method="POST" action ="/edit-plants/{{this._id}}">
-                  <button style="background-color:#4169E1;" type="submit" class="btn btn-primary" align="right">EDIT PLANTS</button>
-              </form>
-              <br>
         </div>
 
         {{#each this.plantId}}
             {{#if showButton}}
-                <div class="card mb-3" style="max-width: 540px;">
+                <div class="card mb-3" style="width: 540px">
                     <div class="row g-0">
                         <div class="card-body">
                     
@@ -72,7 +68,7 @@
                     </div>
                 </div>
             {{else}}
-                <div class="card mb-3" style="max-width: 540px;">
+                <div class="card mb-3" style="width: 540px">
                     <div class="row g-0">
                         <div class="col-md-4 tower">
                              <img src="{{this.img}}"  class="plants-img">
@@ -83,7 +79,7 @@
                                         <h5 class="card-title">{{this.plantname}}</h5>
                                         <p >{{this.description}}</p>      
                                         <div class="toRight tower-col2">
-                                          <form  method="POST" action ="/delete-plant/{{this._id}}/{{this.plantId}}">
+                                          <form  method="POST" action ="/delete-plant/{{../this._id}}/{{this._id}}">
                                                <button style="background-color:#87253e;" type="submit" class="btn btn-primary" align="right">-</button>
                                           </form>     
                                         </div>    
