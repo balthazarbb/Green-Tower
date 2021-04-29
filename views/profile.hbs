@@ -31,7 +31,7 @@
     <div >
 {{#if naming}}
 <form method="POST" action="/create-tower">
-    <label>Towername</label>
+ 
     <input type="towername" name="towername" placeholder="name your tower"  >
     <button type="submit" name="create-tower">create</button>
 </form>
@@ -47,13 +47,15 @@
     {{#each towers}}
     <div class="colour">
         <h1>{{this.towername}}</h1>
-        <form  method="POST" action ="/delete-tower/{{this._id}}">
-            <button style="background-color:#4169E1;", type="deletebtn" class="btn btn-primary" align="right">DELETE TOWER</button>
-        </form>
-        <form  method="POST" action ="/edit-plants/{{this._id}}">
-            <button style="background-color:#4169E1;", type="deletebtn" class="btn btn-primary" align="right">EDIT PLANTS</button>
-        </form>
-
+        <div class="toRight tower-col2">
+             <form  method="POST" action ="/delete-tower/{{this._id}}">
+                   <button style="background-color:#4169E1;" type="submit" class="btn btn-primary" align="right">DELETE TOWER</button>
+              </form>
+              <form  method="POST" action ="/edit-plants/{{this._id}}">
+                  <button style="background-color:#4169E1;" type="submit" class="btn btn-primary" align="right">EDIT PLANTS</button>
+              </form>
+              <br>
+        </div>
 
         {{#each this.plantId}}
             {{#if showButton}}
@@ -77,7 +79,12 @@
                             <div class="card-body">
                                  <div  class="card-inner">
                                         <h5 class="card-title">{{this.plantname}}</h5>
-                                        <p >{{this.description}}</p>                                                      
+                                        <p >{{this.description}}</p>      
+                                        <div class="toRight tower-col2">
+                                          <form  method="POST" action ="/delete-plant/{{this._id}}/{{this.plantId}}">
+                                               <button style="background-color:#87253e;" type="submit" class="btn btn-primary" align="right">-</button>
+                                          </form>     
+                                        </div>    
                                  </div>
                             </div>
                         </div>
