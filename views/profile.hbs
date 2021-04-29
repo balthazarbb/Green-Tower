@@ -40,23 +40,23 @@
   {{/if}}   
   </div>
 
-<div class="colour">
+<div>
     {{#each towers}}
-    <h1>{{this.towername}}</h1>
-      <form  method="POST" action ="/delete-tower/{{this._id}}">
-          <button style="background-color:#4169E1;", type="deletebtn" class="btn btn-primary" align="right">Delete tower</button>
-      </form>
+    <div class="colour">
+        <h1>{{this.towername}}</h1>
+        <form  method="POST" action ="/delete-tower/{{this._id}}">
+            <button style="background-color:#4169E1;", type="deletebtn" class="btn btn-primary" align="right">Delete tower</button>
+        </form>
         {{#each this.plantId}}
             {{#if showButton}}
-                 <div class="card mb-3 tower-col" style="max-width: 540px;">
+                <div class="card mb-3 tower-col" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="card-body">
                     
-                        <a href="/plants/{{../this._id}}"><button style="background-color:#4169E1;", type="loginbtn" class="btn btn-primary">add plant</button></a>
+                              <a href="/plants/{{../this._id}}"><button style="background-color:#4169E1;", type="loginbtn" class="btn btn-primary">add plant</button></a>
 
-                            </div>
-                            
                         </div>
+                            
                     </div>
                 </div>
             {{else}}
@@ -68,9 +68,8 @@
                         <div class="col-md-8" >
                             <div class="card-body">
                                  <div  class="card-inner">
-                                           <h5 class="card-title">{{this.plantname}}</h5>
-                                           <p >{{this.description}}</p>
-                                                                                              
+                                        <h5 class="card-title">{{this.plantname}}</h5>
+                                        <p >{{this.description}}</p>                                                      
                                  </div>
                             </div>
                         </div>
@@ -78,7 +77,7 @@
                 </div>
             {{/if}}
         {{/each}}
-
+    </div>
     {{/each}}
 </div>
 </section>
