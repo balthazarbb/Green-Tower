@@ -112,4 +112,24 @@ router.post("/delete-tower/:id", (req, res, next) => {
     });
 });
 
+//delete single plants from profile
+router.post("/delete-plant/:towerId/:plantId", (req, res, next)=>{
+  const towerId = req.params.towerId;
+  const plantId = req.params.plantId;
+  TowerModel.findByIdAndUpdate(towerId)
+  .then(() => {
+    Plants.findByIdAndDelete(plantId,{
+      $pull: {plantId}
+    })
+    .then((err)=>{
+      res.redirect("/pofile");
+    })
+    
+  })
+  .catch((err) => {
+    console.log(err)
+    
+  });
+});
+
 module.exports = router;
