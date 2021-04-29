@@ -9,8 +9,8 @@
 
     <ul class="nav nav-pills">
 
-      <li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
-      <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+      <li class="nav-item"><a href="/profile" class="nav-link nav-item">Profile</a></li>
+      <li class="nav-item"><a href="/logout" class="nav-link nav-item">Logout</a></li>
     </ul>
   </header>
 </div>
@@ -25,13 +25,13 @@
         <div class="col-md-8">
             <div class="card-body">
               <div  class="card-inner">
-                <h5 class="card-title">{{this.plantname}}</h5>
-                  <p class="card-text">{{this.description}} Season: {{this.season}} <br> Time to harvest: about {{this.timeToHarvest}} days <br> Ph value: {{this.phValue}}  <br> Fertilizer type: {{this.plantType}}</p>
+                <h4 class="card-title">{{this.plantname}}</h4>
+                  <p class="card-text">{{this.description}} <br> Season: {{this.season}} <br> Time to harvest: about {{this.timeToHarvest}} days <br> Ph value: {{this.phValue}}  <br> Fertilizer type: {{this.plantType}}</p>
                     <div class="btn-group">
                       <form method="POST" action="/plants/{{../towerId}}/{{this._id}}"> 
-                        <button type="submit" class="profile-btns" align="right">add to tower</button>
+                        <button type="submit" class="profile-btns" align="right">ADD</button>
                       </form>
-                      <a href="/profile"><button type="submit" class="profile-btns" align="right">Profile</button></a>
+                      <a href="/profile"><button type="submit" class="profile-btns" align="right">PROFILE</button></a>
         	          </div>
               </div>  
             </div>
