@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #f3fcf0;
 }
 
 a {
@@ -16,7 +17,7 @@ h1 {
 }
 
 #towerpic {
-  width: 10%;
+  width: 30%;
 }
 
 .text-center {
@@ -66,6 +67,13 @@ h1 {
   display: flex;
   justify-content: center;
 }
+.tower-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-
-
+.colour {
+  background-color: teal;
+}
