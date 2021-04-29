@@ -144,3 +144,22 @@ h1 {
 .nav-item {
   color: #3d85c6;
 }
+
+.size{
+  font-size: 3em;
+}
+.size2{
+  font-size: 5em;
+}
+
+.namebtn{  
+  border-radius: 4px;
+  background-color: #3d85c6;
+  border: none;
+  color: white;
+  margin: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+}
