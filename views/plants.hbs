@@ -15,7 +15,7 @@
   </header>
 </div>
 <div class="tower">    
-  <h1>choose your plants</h1>
+  <h1 class="size1">PLANTS</h1>
 </div>
 <section class="tower-col">
 {{#each plants}}
@@ -33,7 +33,7 @@
                     <div class="btn-group">
                       <form method="POST" action="/plants/{{../towerId}}/{{this._id}}"> 
                         {{#if this.isInTower}}
-                         <button type="submit" class="profile-btns" align="right" disabled >ALREADY ADDED</button>
+                         <button type="submit" class="profile-btns" align="right">ALREADY ADDED</button>
                          {{else}}
                         <button type="submit" class="profile-btns" align="right">ADD</button>
                         {{/if}}

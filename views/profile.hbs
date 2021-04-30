@@ -22,9 +22,10 @@
                   <div> 
                       <div class="align">
                          <img src="images/Tower.png" id="towerpic">
-                         <div class="center-col">
-                              <div class=" toRight"> 
-                                  <a href="/create-new-tower"  class="nav-item text-decoration-none size">create a new tower</a>
+                         <div class="center-col3">
+                              <div> 
+                                {{!--  <a href="/create-new-tower"  class="nav-item text-decoration-none size">create a new tower</a>--}}
+                               <form method="get" action="/create-new-tower"><button class="namebtn">create new tower</button></form>
                               </div>
                               {{#if naming}}
                                 <form method="POST" action="/create-tower">
@@ -32,7 +33,7 @@
                                      <button class="namebtn"type="submit" name="create-tower">create</button>
                                 </form>
                                {{/if}} 
-                                <div class="margin">
+                                <div class="margin fontSize">
                                      <p> Add plants below</p>
                                 </div>
                          </div>
@@ -41,15 +42,15 @@
                </div>
           <div>
           <div class="tower">    
-            <h1 class="size">YOUR TOWERS</h1>
+            <h1 class="size1">YOUR TOWERS</h1>
           </div>
           <div >
            {{#each towers}}
            <div class="colour">
               <h1>{{this.towername}}</h1>
-                <div class="toRight tower-col2">
+                <div class="toLeft tower-col2">
                    <form  method="POST" action ="/delete-tower/{{this._id}}">
-                     <button type="submit" class="fontSize2 nav-item  btn-del" >DELETE TOWER</button>
+                     <button type="submit" class="btn-del"  >X</button>
                   </form>
                 </div>
 
@@ -59,7 +60,7 @@
                         <div class="row g-0">
                             <div class="card-body">
                     
-                                <a href="/plants/{{../this._id}}"><button  type="loginbtn" class="btn btn-primary profile-btns">add plant</button></a>
+                                <a href="/plants/{{../this._id}}"><button  type="loginbtn" class=" profile-btns">add plant</button></a>
                            </div>
                         </div>
                     </div>
@@ -74,9 +75,9 @@
                                  <div  class="card-inner">
                                         <h5 class="card-title">{{this.plantname}}</h5>
                                         <p >{{this.description}}</p>      
-                                        <div class="toRight ">
+                                        <div class="center-col3 ">
                                           <form  method="POST" action ="/delete-plant/{{../this._id}}/{{this._id}}">
-                                               <button  type="submit" class="btn profile-btns" align="right">-</button>
+                                               <button  type="submit" class="btn-del" align="right">X</button>
                                           </form>     
                                         </div>    
                                  </div>
