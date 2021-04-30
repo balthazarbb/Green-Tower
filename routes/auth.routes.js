@@ -14,7 +14,7 @@ router.post("/signup", (req, res, next) => {
     res.render("auth/signup.hbs", { msg: "PLease enter all fields" });
     return;
   }
-  /*  const passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    const passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
   if (!passRe.test(password)) {
     res.render("auth/signup.hbs", {
       msg:
@@ -22,7 +22,7 @@ router.post("/signup", (req, res, next) => {
     });
     return;
   }
-*/
+
   // encrypt the PW, create User in db:
   const salt = bcrypt.genSaltSync(12);
   const hash = bcrypt.hashSync(password, salt);
